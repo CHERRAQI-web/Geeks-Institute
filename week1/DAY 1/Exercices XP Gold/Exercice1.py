@@ -1,5 +1,13 @@
-# mois=input(" saisir un mois :")
-# if mois<=1 and mois>=12:
-#     if mois<=3 and mois >=5:
-#         print("Spring")
-#     else if mois<=6 and mois >=8:
+mois = int(input("Saisir un mois (1-12) : "))
+
+if 1 <= mois <= 12:
+    if mois in [3, 4, 5]:
+        print("Spring")
+    elif mois in [6, 7, 8]:
+        print("Summer")
+    elif mois in [9, 10, 11]:
+        print("Autumn")
+    else:  # mois in [12, 1, 2]
+        print("Winter")
+else:
+    print("Saisir un mois correct (entre 1 et 12)")
