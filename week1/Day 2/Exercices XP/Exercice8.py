@@ -9,6 +9,6 @@ while True:
 
     print(f"  Adding {garniture} to your pizza.")
     prix+=2.5
-print(f" le prix est {prix}")
+print(f" le prix est {prix} $")
 
 print(" Merci ! Votre pizza est en préparation.")
