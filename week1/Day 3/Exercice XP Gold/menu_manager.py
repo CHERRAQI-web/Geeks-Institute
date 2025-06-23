@@ -11,7 +11,7 @@ class MenuManager:
                 "spice":spice,
                 "gluten":gluten
                 })
-        print(f"✅ '{name}' a été ajouté au menu.")
+        print(f"{name} a été ajouté au menu.")
 
     
     def update_item(self,name, price=None, spice=None, gluten=None):
@@ -24,7 +24,7 @@ class MenuManager:
                     if item["gluten"] is not None:
                       item["gluten"]=gluten
                 return True
-        print(f"❌ '{name}' n'existe pas dans le menu.")
+        print(f"{name}n'existe pas dans le menu.")
         return False
     def remove_item(self,name):
         for item in self.menu:
