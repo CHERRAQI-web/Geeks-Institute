@@ -22,3 +22,6 @@ select * from customers where last_name='Jones'
 
 select * from customers where not first_name = 'Scott'
 
+alter table items add column id int GENERATED ALWAYS as IDENTITY  primary key
+alter table customers add column id int GENERATED ALWAYS as IDENTITY  primary key
+
