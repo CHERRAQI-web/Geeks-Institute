@@ -22,7 +22,7 @@ values (
     (select id from customers where first_name = 'Greg' and last_name = 'Jones'),
     (select id from items where article = 'Petit bureau'),
    2
-);
+); 
 select * from purchases
 select c.first_name,C.last_name,p.item_id,p.quantity_purchased from purchases p join customers c on c.id=p.customer_id
 select * from purchases where customer_id=5
@@ -33,4 +33,4 @@ join purchases p on p.customer_id=c.id join items i on i.id=p.item_id
 
 INSERT INTO purchases (customer_id, item_id, quantity_purchased)
 VALUES (3, NULL, 1);
---Une clé étrangère accepte NULL
+--
