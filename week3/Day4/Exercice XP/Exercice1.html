@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade-on-hover {
+        transition: opacity 0.8s ease;
+        }
+
+        .fade-on-hover:hover {
+        opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <article>
+    <h1 onmouseover="randomPolice(101)"> Some Facts </h1>
+    <h2> The Chocolate </h2>
+    <h3> History of the chocolate </h3>
+    <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+    Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+    <p  class="fade-on-hover"> After the European discovery of the Americas, chocolate became 
+    very popular in the wider world, and its demand exploded. </p>
+    <p> Chocolate has since become a popular food product that millions enjoy every day, 
+    thanks to its unique, rich, and sweet taste.</p> 
+    <p> But what effect does eating chocolate have on our health?</p> 
+</article>
+<button onclick="clicked()">Clique</button>
+</body>
+<script>
+    let h1=document.getElementsByTagName("h1")
+    console.log(h1)
+    
+    let article = document.querySelector("article");
+   let derniersParagraphe = article.querySelectorAll("p");
+    if (derniersParagraphe.length > 0) {
+        derniersParagraphe[derniersParagraphe.length - 1].remove();
+    }
+    let h2=document.getElementsByTagName("h2")[0]
+    h2.onclick=function(){
+         h2.style.backgroundColor ="red"
+    }
+    let h3=document.getElementsByTagName("h3")[0]
+    h3.onclick=function(){
+         h3.style.display ="none"
+    }
+   function clicked(){
+    let parag=article.querySelectorAll("p")
+    if(parag.length>0){
+    for(let i=0;i<parag.length;i++){
+    parag[i].textContent=parag[i].textContent.toUpperCase()
+    }
+    }
+   }
+
+
+    function randomPolice(max) {
+        let h1=document.querySelector("h1")
+        let police=Math.floor(Math.random() * max);
+        h1.style.fontSize=police+"px"
+     
+    }
+    
+</script>
+</html>
