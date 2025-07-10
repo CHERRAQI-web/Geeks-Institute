@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<form onsubmit="envoyer(event)">
+      <input type="text" name="name" />
+      <input type="text" name="last_name" /><button type="submit">Send</button>
+      <section id="affichage"></section>
+    </form>
+  </body>
+  <script>
+    function envoyer(event) {
+      event.preventDefault();
+
+      const name = document.querySelector('input[name="name"]').value;
+      const last_name = document.querySelector('input[name="last_name"]').value;
+
+      // Création de l'objet
+      const data = {
+        name: name,
+        last_name: last_name,
+      };
+
+      // Conversion en JSON formaté
+      const jsonData = JSON.stringify(data, null, 2);
+
+      // Affichage dans la section
+      document.getElementById("affichage").textContent = jsonData;
+
+      // Optionnel : vider le formulaire
+      event.target.reset();
+    }
+  </script>
+</html>
