@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      section {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 0px;
+        margin-top: 100px;
+        margin-left: 10px;
+        background-color: #e7e4c5;
+      }
+      button {
+        background-color: rgb(157, 160, 157);
+      }
+      #form {
+        border: 1px solid black;
+        margin-top: 100px;
+        text-align: center;
+        background-color: #e7e4c5;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #bd8b5c;
+        color: white;
+        border: none;
+        margin: 5px;
+        border-radius: 10px;
+      }
+
+      button:hover {
+        background-color: #999570;
+      }
+      #btn {
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+      #form2 {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section">
+      <button onclick=" clickQuote()" id="btn1">Générer un devis</button>
+    </section>
+    <div id="btn">
+      <button id="NbCaract" onclick="NbCaractère()">Nombre de caractère</button
+      ><br />
+      <p><span id="val1"></span></p>
+      <button id="NbCaractSans" onclick="NbCaractèreSans()">
+        Nombre de caractère</button
+      ><br />
+      <p><span id="val2"></span></p>
+      <button id="NbMots" onclick="NbMots()">Nombre de caractère</button><br />
+      <p><span id="val3"></span></p>
+    </div>
+    <form id="form" onsubmit="ajouterQuote(event)">
+      <label>author</label><br />
+      <input type="text" name="author" id="author" /><br />
+      <label>quote</label><br />
+      <textarea name="quote" id="quote"></textarea><br />
+      <button type="submit" id="btnAjouter">Ajouter</button>
+    </form>
+
+    <form id="form2" onsubmit="Search(event)" style="margin-top: 50px;">
+        <h2>My Quotes</h2>
+        <h3>Motivational, Inspirational and More !</h3><br><br>
+        <input type="text" id="searchInput" placeholder="Nom de l'auteur" style="width: 300px;"/>
+        <button type="submit">Search</button><br />
+        <button type="button" onclick="previousQuote()">Previous</button>
+        <button type="button" onclick="nextQuote()">Next</button>
+    </form>
+  </body>
+  <script src="Projet.js"></script>
+</html>
