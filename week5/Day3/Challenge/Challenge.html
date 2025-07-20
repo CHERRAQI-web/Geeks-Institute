@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-image: url("https://i.pinimg.com/736x/ea/be/d9/eabed9b4274263b0f8c8e153f59ffe1f.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="h-screen flex flex-col items-center justify-center h-screenspace-y-6">
+    <div>
+      <div
+        class="flex flex-col justify-center items-center bg-purple-800 w-[500px] h-[500px] opacity-90">
+        <h1 class=" text-white text-4xl">Currencey Converter</h1>
+        <div id="container"></div>
+        <p class=" text-white text-2xl">Amount</p>
+        <br />
+        <input type="number" id="montant" />
+        <button onclick="convertir()" class="border-2 h-[50px] w-[80px] text-black mt-4 rounded-lg">Convert</button><br />
+        <label id="resultat" class="bg-purple-900"></label>
+      </div>
+    </div>
+    <script src="Challenge.js"></script>
+  </body>
+</html>

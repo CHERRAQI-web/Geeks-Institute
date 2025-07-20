@@ -1,12 +1,12 @@
 # Ignorer les dossiers des semaines
-week1/
-week2/
-week3/
-week4/
-week5/
+# week1/
+# week2/
+# week3/
+# week4/
+# week5/
 
 # Ignorer les fichiers spécifiques
 .gitattributes
 .env
 *.log
-Geeks-Institute-clean/
+node_modules/

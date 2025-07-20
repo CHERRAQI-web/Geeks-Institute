@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Kumar+One+Outline&display=swap" rel="stylesheet">
+
+    <title>Star Wars</title>
+    <style>
+        body{
+           background-image: url("https://i.giphy.com/media/TxVVB6PfWMjE4/200.webp");
+        }
+	
+		@font-face {
+			font-family: 'Star Jedi';
+			src: url('/fonts/Starjedi.ttf') format('truetype');
+		}
+		.logo{
+			font-family: 'Kumar One Outline', serif;
+		}
+    </style>
+</head>
+<body class="h-screen flex flex-col items-center justify-center bg-gray-100 text-white h-screenspace-y-6">
+   	<div class=" flex flex-col justify-center items-center h-screen">
+
+
+		<div style="font-family: 'Kumar One Outline', serif;" class="logo text-yellow-400 text-6xl font-['Star_Jedi']">Star Wars</div>
+
+		<div class="container border-2 border-solid border-yellow-300 w-[500px] h-[400px] rounded-lg  flex flex-col items-center justify-center " id="character"></div>
+
+		<button type="button" id="button" name="button"onclick="getRandomCharacter()"class="bg-gray-200 text-black px-4 py-2 mt-4 rounded-lg border-2 border-solid border-yellow-300" >Find Someone</button>
+
+	</div>
+</body>
+<script src="Exercice1.js"></script>
+</html>
