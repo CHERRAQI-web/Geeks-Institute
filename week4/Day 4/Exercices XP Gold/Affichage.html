@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Données reçues</title>
+</head>
+<body>
+  <h2>Données reçues :</h2>
+  <section id="affichage"></section>
+
+  <script>
+    const nom = localStorage.getItem("name");
+    const last = localStorage.getItem("last_name");
+
+    const section = document.getElementById("affichage");
+    section.innerHTML = `<p>name : ${nom}</p><p>last_name : ${last}</p>`;
+
+    // Nettoyer les données si nécessaire
+    localStorage.removeItem("name");
+    localStorage.removeItem("last_name");
+  </script>
+</body>
+</html>
