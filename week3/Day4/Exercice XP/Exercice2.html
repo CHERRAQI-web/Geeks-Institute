@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form> 
+        <ul class="usersAnswer"></ul>
+</body>
+<script>
+    let frm=document.getElementsByTagName("form")
+    console.log(frm)
+    let first_name=document.getElementById("fname")
+    let last_name=document.getElementById("lname")
+    console.log(first_name)
+    console.log(last_name)
+    let first=document.getElementsByName("firstname")[0]
+    let last=document.getElementsByName("lastname")[0]
+    console.log(first)
+    console.log(last)
+    //on utilise event.preventDefault() : le formulaire ne s’envoie pas, tu restes sur la page et tu peux faire ce que tu veux (afficher les valeurs, les vérifier, etc.).
+    frm.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+    console.log("Formulaire intercepté !");
+    });
+
+    console.log("Prénom :", first_name.value);
+    console.log("Nom :", last_name.value);
+    if(first_name.value.trim()==""||last_name.value.trim()==""){
+        alert("le nom ou prenom est vide")
+    }
+    let list=document.createElement("li")
+    list.textContent=`${first_name} ${last_name}`;  
+    
+   
+    ul.appendChild(li);
+</script>
+</html>

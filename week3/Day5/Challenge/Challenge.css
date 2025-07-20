@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(255, 245, 198);
+}
+.global{
+    text-align: center;
+    margin-top: 200px;
+    background-color: aliceblue;
+    margin-left: 600px;
+    margin-right: 600px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calendrier dynamique</title>
+</head>
+<body>
+  <script>
+    // Fonction createCalendar ici (copie-colle la fonction complète que je t’ai donnée)
+    function createCalendar(year, month) {
+      month = month - 1;
+      const table = document.createElement('table');
+      table.border = '1';
+      table.style.borderCollapse = 'collapse';
+
+      const jours = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+      const thead = document.createElement('thead');
+      const trHead = document.createElement('tr');
+      for (let jour of jours) {
+        const th = document.createElement('th');
+        th.textContent = jour;
+        th.style.padding = '5px';
+        trHead.appendChild(th);
+      }
+      thead.appendChild(trHead);
+      table.appendChild(thead);
+
+      const tbody = document.createElement('tbody');
+      let premierJour = new Date(year, month, 1).getDay();
+      premierJour = (premierJour + 6) % 7;
+      const joursDansMois = new Date(year, month + 1, 0).getDate();
+
+      let jourCourant = 1;
+      for (let semaine = 0; jourCourant <= joursDansMois; semaine++) {
+        const tr = document.createElement('tr');
+        for (let jourSemaine = 0; jourSemaine < 7; jourSemaine++) {
+          const td = document.createElement('td');
+          td.style.padding = '5px';
+          td.style.textAlign = 'center';
+          td.style.width = '30px';
+          td.style.height = '30px';
+
+          if ((semaine === 0 && jourSemaine < premierJour) || jourCourant > joursDansMois) {
+            td.textContent = '';
+          } else {
+            td.textContent = jourCourant;
+            jourCourant++;
+          }
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+      table.appendChild(tbody);
+      document.body.appendChild(table);
+    }
+
+    // Crée le calendrier septembre 2012
+    createCalendar(2025, 7);
+  </script>
+</body>
+</html>

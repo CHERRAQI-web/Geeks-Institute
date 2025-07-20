@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: url(image.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh; /* Prend la taille de l'écran mais permet de grandir si nécessaire */
+	padding: 40px 20px; /* Ajoute un peu d'espace autour */
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap; /* ✅ Les éléments passent à la ligne automatiquement */
+	gap: 10px;
+	justify-content: center;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid rgb(248, 248, 0);
+	border-radius: 2px;
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: transform 0.2s ease;
+}
+
+.content:hover {
+	transform: scale(1.07);
+}
+
+.content strong {
+	font-size: 3em;
+}
+
+.content span {
+	color: rgb(255, 239, 92);
+}

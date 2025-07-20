@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Géolocalisation HTML5</title>
+</head>
+<body>
+  <h2>Ma position actuelle</h2>
+  <button onclick="getLocation()">Afficher ma position</button>
+  <p id="result"></p>
+
+  <script>
+    function getLocation() {
+      let output = document.getElementById("result");
+
+      // Vérifie si la géolocalisation est supportée
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          // Succès
+          function(position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            output.innerHTML = "Latitude : " + latitude + "<br>Longitude : " + longitude;
+          },
+          // Erreur
+          function(error) {
+            switch(error.code) {
+              case error.PERMISSION_DENIED:
+                output.innerHTML = "L'utilisateur a refusé la demande de géolocalisation.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                output.innerHTML = "Les informations de localisation ne sont pas disponibles.";
+                break;
+              case error.TIMEOUT:
+                output.innerHTML = "La demande de localisation a expiré.";
+                break;
+              case error.UNKNOWN_ERROR:
+                output.innerHTML = "Une erreur inconnue est survenue.";
+                break;
+            }
+          }
+        );
+      } else {
+        output.innerHTML = "La géolocalisation n’est pas supportée par ce navigateur.";
+      }
+    }
+  </script>
+</body>
+</html>
