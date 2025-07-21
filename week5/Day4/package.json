@@ -11,6 +11,8 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "date-fns": "^4.1.0",
+    "date-holidays": "^3.24.4",
     "faker": "^6.6.6",
     "readline-sync": "^1.4.10"
   }
