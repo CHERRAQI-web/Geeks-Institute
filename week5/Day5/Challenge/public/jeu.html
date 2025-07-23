@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Emoji</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4 text-center">Devine l’Emoji 🧠</h1>
+    <div id="game">
+      <div id="emoji" class="text-6xl mb-4 text-center">❓</div>
+      <div id="options" class="space-y-2"></div>
+      <div id="feedback" class="mt-4 text-lg font-semibold text-center"></div>
+      <div class="mt-4 text-center">
+        Score : <span id="score">0</span>
+      </div>
+    </div>
+
+    <div class="mt-6">
+      <input id="username" placeholder="Votre prénom" class="border p-2 w-full mb-2"/>
+      <button id="saveScore" class="bg-blue-500 text-white px-4 py-2 rounded w-full">Enregistrer Score</button>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="text-xl font-bold mb-2">🏆 Classement</h2>
+      <ul id="leaderboard" class="list-disc pl-6"></ul>
+    </div>
+  </div>
+
+  <script src="jeu.js"></script>
+</body>
+</html>
