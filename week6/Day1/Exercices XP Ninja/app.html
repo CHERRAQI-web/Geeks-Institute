@@ -3,24 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emoji Greeting</title>
+  <title>Formulaire Emoji</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <form action="/greet" method="POST" class="bg-white p-8 rounded shadow-md w-96">
-    <h1 class="text-2xl font-bold mb-4">Bienvenue !</h1>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+
+  <form action="/greet" method="POST" class="bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Choisissez un emoji 🎉</h1>
     
-    <input type="text" name="username" placeholder="Votre nom" class="w-full border p-2 mb-4 rounded" required />
+    <input 
+      type="text" 
+      name="username" 
+      placeholder="Votre Nom" 
+      class="border border-gray-300 rounded px-4 py-2 w-full mb-4" 
+      required
+    />
 
-    <select name="emoji" class="w-full border p-2 mb-4 rounded">
-      <option value="😀">😀</option>
-      <option value="🎉">🎉</option>
-      <option value="🌟">🌟</option>
-      <option value="🎈">🎈</option>
-      <option value="👋">👋</option>
-    </select>
+    <select 
+      name="emoji" 
+      id="mySelect" 
+      class="border border-gray-300 rounded px-4 py-2 w-full mb-4" 
+      required
+    ></select>
 
-    <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Envoyer</button>
+    <button 
+      type="submit" 
+      class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-full"
+    >
+      Envoyer
+    </button>
   </form>
+
+  <script>
+    const emojis = ["😀", "🎉", "🌟", "🎈", "👋"];
+    const select = document.getElementById("mySelect");
+
+    emojis.forEach(emoji => {
+      const option = document.createElement("option");
+      option.value = emoji;
+      option.textContent = emoji;
+      select.appendChild(option);
+    });
+  </script>
 </body>
 </html>
