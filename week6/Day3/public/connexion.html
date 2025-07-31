@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <form
+      action="/login"
+      method="POST"
+      class="max-w-md mx-auto bg-white p-6 rounded shadow" id="login-form"> 
+      <h1 class="font-bold text-3xl mb-8">Login</h1>
+
+      <div class="text-center mb-6">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          class="border p-2 mb-4 ml-10"
+        /><br />
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="border p-2 mb-4 ml-10"
+        /><br />
+        
+        <button type="submit" class="bg-blue-500 text-white p-2 pl-6 pr-6 rounded ">
+          Login
+        </button>
+      </div>
+    </form>
+
+    <!-- Message d'erreur -->
+    <div id="errorMessage" style="display:none; color: red; text-align:center; font-family:sans-serif;">
+        <p id="errorText"></p>
+    </div>
+
+    <!-- Message de confirmation -->
+    <div id="confirmationMessage" style="display:none; color: green; text-align:center; font-family:sans-serif;">
+        <p id="message"></p>
+    </div>
+
+    <script>
+      document.getElementById('login-form').addEventListener('submit', async function(e) {
+        e.preventDefault();  // Empêcher le comportement par défaut (rafraîchissement de la page)
+
+        // Récupérer les valeurs du formulaire
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => { formObject[key] = value });
+
+        try {
+          // Envoyer les données au serveur via fetch (méthode POST)
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObject),
+          });
+
+          if (response.ok) {
+           
+            const username = document.getElementById('username').value;  
+            document.getElementById('message').innerText = `Hi ${username}, welcome back again`; 
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none';  // Cacher le message d'erreur
+          } else {
+            const errorMessage = await response.text();
+            document.getElementById('errorText').innerText = errorMessage;
+            document.getElementById('errorMessage').style.display = 'block';  
+            document.getElementById('confirmationMessage').style.display = 'none';  // Cacher le message de confirmation
+          }
+        } catch (error) {
+          console.error('Erreur de connexion au serveur:', error);
+          alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+        }
+      });
+    </script>
+  </body>
+</html>

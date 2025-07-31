@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "firstName": "Aziza",
+    "lastName": "CHERRAQI",
+    "email": "azziza.cherraqi@gmail.com",
+    "username": "azarfr",
+    "hashedPassword": "$2b$10$jH7.o/rmkw/GPqk4Bp1hpugCKO3Ia3MzXOgNp/plm0Te.ht/gFlii"
+  },
+  {
+    "id": 2,
+    "firstName": "Aziza",
+    "lastName": "CHERRAQI",
+    "email": "azidaza.cherraqi@gmail.com",
+    "username": "ada",
+    "hashedPassword": "$2b$10$SdB2ijB.N44I5sSeGvyB6OyNneyXDytoOFV9PTj21.VBudMryoqyC"
+  },
+  {
+    "id": 3,
+    "firstName": "Aziza",
+    "lastName": "CHERRAQI",
+    "email": "aziza.cherraqi@gmail.com",
+    "username": "aziza",
+    "hashedPassword": "$2b$10$KwypRNmCIa7SezEV2cqWoucj3xr8zN9tM.eCAGXp7dXmWBgIJyDqa"
+  },
+  {
+    "id": 4,
+    "firstName": "Aziza",
+    "lastName": "CHERRAQI",
+    "email": "azGiza.cherraqi@gmail.com",
+    "username": "zfz",
+    "hashedPassword": "$2b$10$EtPax2rCu4phsYgm9Ynpz.mv3ZVyFW/c3jNpAvCXZJEFeA3nkl/Xu"
+  },
+  {
+    "id": 5,
+    "firstName": "Aziza",
+    "lastName": "CHERRAQI",
+    "email": "aziza.chzerraqi@gmail.com",
+    "username": "cherraqi",
+    "hashedPassword": "$2b$10$6O1kQhujYLlTQHQ1BsFqoOAK9GD.8Q5fHPzBs.AEhYFcNMOCHAT62"
+  }
+]

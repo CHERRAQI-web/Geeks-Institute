@@ -4,7 +4,7 @@ import index from './routes/index.js';
 const app = express();
 const port = 3000;
 
-app.use(express.urlencoded({ extended: true })); // ← requis
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/', index);
