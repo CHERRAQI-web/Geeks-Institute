@@ -1,0 +1,76 @@
+<!-- views/search.ejs -->
+<!DOCTYPE html>
+<html lang="fr">
+    <%- include('../partials/head') %>
+    <body>
+        <%- include('../partials/header') %> 
+        
+        <!-- Contenu principal -->
+        <main class="container mx-auto px-4 py-8">
+            <h1 class="text-3xl font-bold mb-6">Recherche d'articles</h1>
+            
+            <!-- Message de recherche -->
+            <% if (typeof searchMessage !== 'undefined') { %>
+                <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-6" role="alert">
+                    <p><%= searchMessage %></p>
+                </div>
+            <% } %>
+            
+            <!-- Formulaire de recherche par titre -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Recherche par titre</h2>
+            <!-- Formulaire de recherche par titre -->
+<!-- Formulaire de recherche par titre -->
+<form action="/search/title" method="POST" class="space-y-4">
+    <div>
+        <label for="title" class="block text-sm font-medium text-gray-700">Titre :</label>
+        <input 
+            type="text" 
+            id="title" 
+            name="title" 
+            placeholder="Entrez le titre de l'article" 
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+            required
+        >
+    </div>
+    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Rechercher</button>
+</form>
+            </section>
+            
+            <!-- Formulaire de recherche par catégorie -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4">Recherche par catégorie</h2>
+                <form action="/search/category" method="POST" class="space-y-4">
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700">Catégorie :</label>
+                        <select id="category" name="category" 
+                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Sélectionnez une catégorie</option>
+                            <option value="Solar System">Solar System</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Health">Health</option>
+                            <option value="Birds">Birds</option>
+                            <option value="Inventions">Inventions</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Rechercher</button>
+                </form>
+            </section>
+            
+            <!-- Résultats de recherche -->
+            <div id="search-results">
+                <%- include('../partials/posts', { articles: articles || [] }) %>
+            </div>
+        </main>
+        
+        <%- include('../partials/footer') %>
+        
+        <script>
+            // Script pour le menu mobile
+            document.getElementById('menu-toggle').addEventListener('click', function() {
+                const menu = document.getElementById('menu');
+                menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+            });
+        </script>
+    </body>
+</html>
