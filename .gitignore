@@ -40,4 +40,5 @@ week6/Day2/Exercices XP Ninja/package.json
 week6/Day3/package.json
 week6/Day3/users.json
 package.json
+./node_modules
 .gitignore
